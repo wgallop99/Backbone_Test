@@ -1,0 +1,16 @@
+{
+  "name": "wat-test-project-master 2",
+  "version": "0.0.0",
+  "authors": [
+    "Will Gallop <wgallop99@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/bower_components",
+    "test",
+    "tests"
+  ]
+}
