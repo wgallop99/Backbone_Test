@@ -1,7 +1,18 @@
 
-var Item = Backbone.Model.extend({});
+var Item = Backbone.Model.extend({
+
+
+})
 
 var collection = Backbone.Collection.extend({
+  initialize: function () {
+        console.log('initiliazed collection')
+  },
+
+  parse: function(response){
+    return response.posts;
+  },
+
   model: Item,
   url: 'api/posts.json'
 });
@@ -33,4 +44,4 @@ var collectionView = Backbone.View.extend({
 
 list.fetch();
 
-$('#app').html(collectionView.render().el);
+// $('#app').html(collectionView.render().el);
