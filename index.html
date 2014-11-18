@@ -14,19 +14,48 @@
         <link rel="stylesheet" href="styles/main.css">
         <script src="scripts/vendor/modernizr.min.js"></script>
     </head>
-    <body id="index-page">
-        <div class="container">
-            <div class="hero-unit" id="app">
+    <body id="index-page" ng-app="App">
 
-            </div>
+      <h1>NewsHub</h1>
+
+      <div class="container" ng-controller="postsController">
+
+        <div class="singlePost">
+          <h4>{{singlePost.title}}</h4>
+
+          <p>{{singlePost.description}}</p>
+
         </div>
+
+        <div class="search">
+          <input type="text" ng-model="search.source" placeholder="Search by Source">
+        </div>
+
+        <div class="posts" ng-repeat="post in posts | filter : search : strict">
+          <h2>{{post.source}}</h2>
+          <a href="{{post.link}}">{{post.title}}</a>
+          <button class="btn" ng-click="getSingle(post.id)">Read More</button>
+
+        </div>
+
+
+        <div id='overlay'></div>
+        <div id='modal'>
+            <div id='content'>No JavaScript Yet!</div>
+            <a href='#' id='close'>close</a>
+        </div>
+
+      </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
-        <script src="client/bower_components/underscore/underscore-min.js"></script>
-        <script src="client/bower_components/backbone/backbone.js"></script>
+        <!-- <script src="client/bower_components/underscore/underscore-min.js"></script>
+        <script src="client/bower_components/backbone/backbone.js"></script> -->
 
-        <script src="scripts/main.js"></script>
+        <script src="client/bower_components/angular/angular.min.js"></script>
+
+
+        <script src="scripts/angular.js"></script>
         <script src="api/posts.json"></script>
     </body>
 </html>

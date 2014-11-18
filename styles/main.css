@@ -1,3 +1,33 @@
 #index .container {
 	margin-top: 50px;
 }
+
+h1 {
+	text-align: center;
+}
+
+h4 {
+	text-aligner: center;
+	color: white;
+}
+
+p {
+	color: white;
+}
+
+.singlePost {
+	position: fixed;
+	top: 150px;
+	right: 150px;
+	width: 400px;
+	overflow: auto;
+	height: 300px;
+	background-color: blue;
+	border-radius: 10px;
+	padding: 20px;
+}
+
+.btn {
+	display: block;
+	margin-top: 20px;
+}
