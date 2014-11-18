@@ -2,6 +2,12 @@
 	margin-top: 50px;
 }
 
+.posts {
+	border-bottom: 1px solid black;
+	width: 400px;
+	padding: 0 0 20px 0;
+}
+
 h1 {
 	text-align: center;
 }
@@ -13,6 +19,22 @@ h4 {
 
 p {
 	color: white;
+}
+
+a {
+	display: block;
+}
+
+
+h2 {
+	display: inline-block;
+}
+
+.redditPic, .nyTimesPic, .slatePic {
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	vertical-align: inherit;
 }
 
 .singlePost {
@@ -30,4 +52,11 @@ p {
 .btn {
 	display: block;
 	margin-top: 20px;
+}
+
+@media (max-width: 800px) {
+  .singlePost {
+		position: static;
+		margin: 50px 0;
+	}
 }

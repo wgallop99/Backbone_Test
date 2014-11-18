@@ -12,6 +12,7 @@
 
         <link rel="stylesheet" href="styles/bootstrap.css">
         <link rel="stylesheet" href="styles/main.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <script src="scripts/vendor/modernizr.min.js"></script>
     </head>
     <body id="index-page" ng-app="App">
@@ -28,21 +29,24 @@
         </div>
 
         <div class="search">
-          <input type="text" ng-model="search.source" placeholder="Search by Source">
+          <select name="sourceSearch" ng-model="search.source">
+            <option value="">All</option>
+            <option value="reddit">Reddit</option>
+            <option value="nytimes">NY Times</option>
+            <option value="slate">Slate</option>
+          </select>
+
+          <input type="text" ng-model="search.title" placeholder="Search by Title">
         </div>
 
         <div class="posts" ng-repeat="post in posts | filter : search : strict">
+          <img class="nyTimesPic" ng-show="post.source === 'nytimes'"src="http://www.preoccupiedterritory.com/wp-content/uploads/2014/07/Times-T-logo.jpg" alt="">
+          <img class="redditPic" ng-show="post.source === 'reddit'" src="http://soapcreativegroup.com/wp-content/uploads/2013/12/business-reddit-head.png" alt="">
+          <img ng-show="post.source === 'slate'" src="http://www.foliomag.com/files/images/slateLogo-S-facebookSquarex200.jpg" alt="" class="slatePic">
           <h2>{{post.source}}</h2>
           <a href="{{post.link}}">{{post.title}}</a>
           <button class="btn" ng-click="getSingle(post.id)">Read More</button>
 
-        </div>
-
-
-        <div id='overlay'></div>
-        <div id='modal'>
-            <div id='content'>No JavaScript Yet!</div>
-            <a href='#' id='close'>close</a>
         </div>
 
       </div>
